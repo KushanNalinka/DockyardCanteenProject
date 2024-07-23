@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.meal-card {
+    @apply flex flex-col items-center justify-center w-40 h-40 rounded-full cursor-pointer transition-transform transform hover:scale-110;
+  }
+  
+  .meal-card img {
+    @apply w-16 h-16 mb-2;
+  }
+  
+  .meal-card h2 {
+    @apply text-xl font-semibold;
+  }
+  
+  .ml-64 {
+    margin-left: 16rem; /* 64px */
+  }
+  .mr-96 {
+    margin-right: 24rem; /* 96px */
+  }
+  .translate-x-full {
+    transform: translateX(100%);
+  }
+  .transform {
+    transform: none;
+  }
+  .transition-transform {
+    transition: transform 0.5s;
+  }
+

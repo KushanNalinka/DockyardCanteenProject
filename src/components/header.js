@@ -102,7 +102,7 @@ const Header = () => {
         <header className='flex justify-between items-center mb-5 bg-[#FFC10C] p-4 '>
             <div className='flex items-center'>
                 <img src={logo} alt="Logo" className='w-10 h-10 mr-2' />
-                <Link to="/" className='text-xl font-semibold  text-white'>DOC CAFE CANTEEN</Link>
+                <h3  className='text-lg font-semibold  text-white'>DOC CAFE CANTEEN</h3>
             </div>
             <h6 className="text-4xl font-bold mb-1 text-white">{meal.charAt(0).toUpperCase() + meal.slice(1)}</h6>
             <div className='w-10 h-10 bg-gray-100 rounded-full flex justify-center items-center relative'>

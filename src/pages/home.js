@@ -274,11 +274,11 @@ const Home = () => {
             placeholder='Search For a Food Item...'
             value={searchTerm}
             onChange={handleSearch}
-            className='w-full p-4 pl-10 pr-10 rounded-full border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-yellow-500'
+            className='w-full p-4 pl-10 pr-10 rounded-full border focus:outline-none focus:ring-2 focus:ring-[#E3E6F6] text-black placeholder-[#D2D2D2]'
           />
-          <FontAwesomeIcon icon={faSearch} className='absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500' />
+          <FontAwesomeIcon icon={faSearch} className='absolute left-3 top-1/2 transform -translate-y-1/2 text-[#28245F]' />
           {searchTerm && (
-            <button onClick={handleReset} className='absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-500'>
+            <button onClick={handleReset} className='absolute right-3 top-1/2 transform -translate-y-1/2 text-[#28245F]'>
               <FontAwesomeIcon icon={faTimes} />
             </button>
           )}

@@ -34,7 +34,7 @@ import imageProduct32 from './assets/images/32.png'
 export const products = [
     {
         id: 1,
-        name: 'Hertfoid Upholstered Chair',
+        name: 'Chicken Curry',
         price: 101,
         image: imageProduct1,
         meal:['Breakfast', 'Lunch','Dinner'],
@@ -44,7 +44,7 @@ export const products = [
     },
     {
         id: 2,
-        name: 'Abingdon Upholstered Chair Swivel',
+        name: 'Kottu okkottu',
         price: 151,
         image: imageProduct2,
         meal:['Breakfast', 'Lunch','Dinner'],

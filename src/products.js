@@ -54,7 +54,7 @@ export const products = [
     },
     {
         id: 3,
-        name: 'Jeses Minimore Modern Style Etta',
+        name: 'Rolls',
         price: 181,
         image: imageProduct3,
         meal:['Breakfast', 'Lunch','Dinner'],
@@ -64,7 +64,7 @@ export const products = [
     },
     {
         id: 4,
-        name: 'JJeses Minimore Modern Style',
+        name: 'kukul mas',
         price: 201,
         image: imageProduct4,
         meal:['Breakfast', 'Lunch','Dinner'],
@@ -74,7 +74,7 @@ export const products = [
     },
     {
         id: 5,
-        name: 'Bolanle Upholstered Armchair',
+        name: 'dawilla godai',
         price: 251,
         image: imageProduct5,
         meal:['Breakfast', 'Lunch','Dinner'],
@@ -84,7 +84,7 @@ export const products = [
     },
     {
         id: 6,
-        name: 'Jaqueze Upholstered Armchair',
+        name: 'noodles',
         price: 111,
         image: imageProduct6,
         meal:['Breakfast', 'Lunch','Dinner'],
@@ -94,7 +94,7 @@ export const products = [
     },
     {
         id: 7,
-        name: 'Leston Wide Upholstered Fabric',
+        name: 'noddles ekka mas',
         price: 121,
         image: imageProduct7,
         meal:'Breakfast',

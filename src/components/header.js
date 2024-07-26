@@ -104,7 +104,7 @@ const Header = () => {
                 <img src={logo} alt="Logo" className='w-10 h-10 mr-2' />
                 <h3  className='text-lg font-semibold  text-white'>DOC CAFE CANTEEN</h3>
             </div>
-            <h6 className="text-4xl font-bold mb-1 text-white">{meal.charAt(0).toUpperCase() + meal.slice(1)}</h6>
+            {/* <h6 className="text-4xl font-bold mb-1 text-white">{meal.charAt(0).toUpperCase() + meal.slice(1)}</h6> */}
             <div className='w-10 h-10 bg-gray-100 rounded-full flex justify-center items-center relative'>
                 <img src={iconCart} alt="" className='w-6' />
                 <span className='absolute top-2/3 right-1/2 bg-red-500 text-white text-sm w-5 h-5 rounded-full flex justify-center items-center'>

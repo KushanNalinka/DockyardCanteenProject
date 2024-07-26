@@ -111,7 +111,7 @@ const Layout = () => {
   //const statusTabCart = useSelector(store => store.cart.statusTab);
 
   return (
-    <div className='bg-zinc-200 flex'>
+    <div className='bg-white flex'>
       <Sidebar setSelectedCategory={setSelectedCategory} /> 
       <div className={`flex-1 transition-transform duration-500 ml-56 mr-96`}>
         <main className='w-full m-auto p-1'>

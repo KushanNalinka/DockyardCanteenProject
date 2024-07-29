@@ -87,6 +87,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaCoffee, FaHamburger, FaUtensils,} from 'react-icons/fa';
 
+
 const MealSelector = () => {
   const navigate = useNavigate();
 

@@ -29,7 +29,7 @@ const CartItem = (props) => {
                 <img src={detail.image} alt="" className='object-cover w-12 h-12 rounded-full shadow-md'/>
                 <div className='flex flex-col'>
                     <h3 className='font-bold'>{detail.name}</h3>
-                    <p className='font-medium'>${detail.price * quantity}</p>
+                    <p className='font-medium'>Rs {detail.price * quantity}.00</p>
                 </div>
             </div>
             <div className='flex items-center gap-2'>

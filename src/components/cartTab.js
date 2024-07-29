@@ -156,7 +156,7 @@ const CartTab = () => {
             </div>
             <div className='bg-[#E3E6F6] shadow-lg'>
                 <div className='p-3 text-[#4E4E4E] font-bold'>
-                    <h3>Total Amount: ${totalAmount.toFixed(2)}</h3>
+                    <h3>Total Amount: Rs {totalAmount.toFixed(2)}</h3>
                 </div>
                 <div className='p-3 font-semibold'>
                     <input

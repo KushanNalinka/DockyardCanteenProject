@@ -676,7 +676,7 @@ const Sidebar = ({ setSelectedCategory }) => {
             <div className="flex items-center">
               <category.icon className="text-2xl mr-4" />
               <Link to="" className="no-underline">
-                <span className="text-xl font-bold  text-white">{category.name}</span>
+                <span className="text-xl font-semiboldbold  text-white">{category.name}</span>
               </Link>
             </div>
           </div>

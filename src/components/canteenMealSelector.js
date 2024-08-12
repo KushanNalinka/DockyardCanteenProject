@@ -1,41 +1,3 @@
-/*import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaCoffee, FaHamburger, FaUtensils } from 'react-icons/fa';
-
-
-const MealSelector = () => {
-  const navigate = useNavigate();
-
-  const handleMealClick = (meal) => {
-    navigate(`/meal/${meal}`);
-  };
-
-  return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold mb-10">Select Your Meal</h1>
-      <div className="flex space-x-10">
-        <div className="meal-card bg-yellow-300" onClick={() => handleMealClick('breakfast')}>
-        <FaCoffee size={60} className="text-white" />
-          <h2>Breakfast</h2>
-        </div>
-        <div className="meal-card bg-white" onClick={() => handleMealClick('lunch')}>
-        <FaHamburger size={60} className="text-blue-900" />
-          <h2>Lunch</h2>
-        </div>
-        <div className="meal-card bg-white" onClick={() => handleMealClick('dinner')}>
-        <FaUtensils size={60} className="text-blue-900" />
-          <h2>Dinner</h2>
-        </div>
-      </div>
-      <div className="flex justify-between w-full mt-10">
-        <button className="bg-yellow-300 py-2 px-4 rounded-lg">Back</button>
-        <button className="bg-blue-900 text-white py-2 px-4 rounded-lg">Next</button>
-      </div>
-    </div>
-  );
-};
-
-export default MealSelector;*/
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaCoffee, FaHamburger, FaUtensils } from 'react-icons/fa';
@@ -44,7 +6,7 @@ const MealSelector = () => {
   const navigate = useNavigate();
 
   const handleMealClick = (meal) => {
-    navigate(`/cashier/meal/${meal}`);
+    navigate(`/canteen/meal/${meal}`);
   };
 
   return (

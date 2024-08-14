@@ -102,7 +102,7 @@ const Sidebar = ({ setSelectedCategory }) => {
               <category.icon className="text-2xl mr-4" />
               <Link to="" className="no-underline">
 
-                <span className="text-xl font-semiboldbold  text-white">{category.name}</spa
+                <span className="text-xl font-semiboldbold  text-white">{category.name}</span>
               
               </Link>
             </div>

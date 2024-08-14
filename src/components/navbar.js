@@ -12,6 +12,7 @@ const Navbar = () => {
           <span className="text-2xl font-bold text-white">DOCCAFÉ</span>
         </div>
         <div className="space-x-4 font-semibold text-white">
+
           <Link to="/" className="text-lg">Home</Link>
           <Link to="/menu" className="text-lg">Menu</Link>
           <Link to="/order" className="text-lg">Order</Link>
@@ -20,6 +21,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center">
           <FaUserCircle size={32} className="text-white" />
+     
           <div className="ml-2 text-lg">Jhon</div>
         </div>
       </div>

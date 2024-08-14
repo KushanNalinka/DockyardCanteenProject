@@ -10,6 +10,7 @@ import breakfast from '../assets/images/breakfast.png';
 import lunch from '../assets/images/lunch.png';
 import dinner from '../assets/images/dinner.png';
 
+
 const Home = () => {
   const { meal } = useParams();
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,6 +30,7 @@ const Home = () => {
     const matchesCategory = selectedCategory ? product.category === selectedCategory : true;
     return matchesMeal && matchesSearchTerm && matchesCategory;
   });
+
   // add the imge based on the meal
   const getImageForMeal = (meal) => {
     switch (meal) {
@@ -68,6 +70,11 @@ const Home = () => {
         </div>
       </div>
       <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4'>
+
+        
+
+ 
+
         {filteredProducts.map((product, key) => 
           <ProductCart key={key} data={product} />
         )}
@@ -76,4 +83,6 @@ const Home = () => {
   );
 };
 
+
 export default Home;
+

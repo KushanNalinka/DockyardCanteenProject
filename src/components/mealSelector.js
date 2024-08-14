@@ -2,14 +2,16 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaCoffee, FaHamburger, FaUtensils,} from 'react-icons/fa';
+import { FaCoffee, FaHamburger, FaUtensils } from 'react-icons/fa';
 
 
 const MealSelector = () => {
   const navigate = useNavigate();
 
   const handleMealClick = (meal) => {
-    navigate(`/meal/${meal}`);
+
+   // navigate(`/meal/${meal}`);
+    navigate(`/cashier/meal/${meal}`);
   };
 
   return (
@@ -48,8 +50,13 @@ const MealSelector = () => {
         <button className="bg-[#FFC10C] text-white py-2 px-4 rounded-lg">Back</button>
         <button className="bg-[#28245F] text-white py-2 px-4 rounded-lg">Next</button>
       </div> */}
+
+    
+
+  
     </div>
   );
 };
 
 export default MealSelector;
+

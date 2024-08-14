@@ -24,6 +24,7 @@ const CartItem = (props) => {
         }));
     }
   return (
+
     <div className='flex justify-between items-center bg-white text-black p-2 gap-5 mb-3 shadow-md rounded-xl w-90 h-24'>
             <div className='flex items-center gap-5'>
                 <img src={detail.image} alt="" className='object-cover w-12 h-12 rounded-full shadow-md'/>
@@ -42,3 +43,4 @@ const CartItem = (props) => {
 }
 
 export default CartItem;
+

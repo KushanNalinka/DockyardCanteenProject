@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from '../components/sideBar';
-import Header from './header';
+import Header from './CanteenHeader';
 
 import { useSelector } from 'react-redux';
 

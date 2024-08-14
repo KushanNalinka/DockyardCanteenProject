@@ -1,5 +1,6 @@
 
 import Layout from './components/layout';
+
 import CanteenLayout from './components/canteenLayout';
 import Home from './pages/home';
 import CanteenHome from './pages/canteenHome';
@@ -27,6 +28,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+
       <Route path="/" element={<Login />} />
     
         <Route path="/register" element={<Register />} />
@@ -35,9 +37,7 @@ function App() {
         <Route path="/cashier" element={<InitialScreen/>} />
         <Route path="/canteen" element={<CanteenInitialScreen/>} />
         <Route path='/canteen/meal/:meal' element={<CanteenLayout />}>
-          <Route index element={<CanteenHome />} />
-          
-        </Route>
+          <Route index element={<CanteenHome />} /></Route>
 
         <Route path='/cashier/meal/:meal' element={<Layout />}>
           <Route index element={<Home />} />
@@ -54,6 +54,7 @@ function App() {
         <Route path="/role" element={<RoleManagement />} />
         <Route path="/addrole" element={<AddRole />} />
         <Route path="/assignrole" element={<AssignRoles />} />
+
       </Routes>
     </BrowserRouter>
   );

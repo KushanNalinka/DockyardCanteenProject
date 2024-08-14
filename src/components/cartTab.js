@@ -1,9 +1,32 @@
 
+
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './cartItem';
 import { clearCart } from '../stores/cart';
-import { products } from '../products'; // Import products
+
+import { products } from '../products';
+
+const CartTab = () => {
+    const carts = useSelector(store => store.cart.items);
+    const statusTab = useSelector(store => store.cart.statusTab);
+    const dispatch = useDispatch();
+    const [serviceNumber, setServiceNumber] = useState('');
+
+    // Calculate total amount
+    const totalAmount = carts.reduce((total, item) => {
+        const product = products.find(product => product.id === item.productId);
+        return total + (product.price * item.quantity);
+    }, 0);
+
+    const handleCheckout = () => {
+        const itemsWithNames = carts.map(item => {
+            const product = products.find(product => product.id === item.productId);
+            return {
+                ...item,
+                name: product ? product.name : 'Unknown',
+// Kushan
+/*import { products } from '../products'; // Import products
 import axios from 'axios'; // Import Axios for API calls
 import PopUp from './PopUp'; // Import the PopUp component
 import CheckPopUp from './checkPopUp';
@@ -86,7 +109,8 @@ const CartTab = () => {
             return {
                 productId: item.productId,
                 name: product.name,
-                quantity: item.quantity,
+                quantity: item.quantity,*/
+
             };
         });
 
@@ -94,7 +118,12 @@ const CartTab = () => {
             items: itemsWithNames,
             totalAmount,
             serviceNumber,
-            serviceUserName,
+
+        };
+        console.log('Inserting data into the database:', purchaseData);
+
+// Kushan
+ /*           serviceUserName,
         };
         console.log('Inserting data into the database:', purchaseData);
 
@@ -106,12 +135,51 @@ const CartTab = () => {
         } catch (error) {
             console.error('Error during purchase:', error.response.data || error.message);
         }
+*/
 
         dispatch(clearCart());
         setServiceNumber('');
     };
 
-    const handleOpenApplication = () => {
+
+    return (
+        <div className={`fixed top-0 right-0 bg-white shadow-2xl w-96 h-full flex flex-col transform transition-transform duration-500 ${statusTab ? '' : 'translate-x-full'}`}>
+            <div className='bg-[#E3E6F6] shadow-sm'>
+                <h2 className='p-5 text-[#28245F] font-black text-2xl text-center h-16'>SHOPPING CART</h2>
+            </div>
+            <div className='p-5 flex-grow overflow-y-auto' style={{ maxHeight: 'calc(100vh - 300px)' }}>
+                {/* Display all items */}
+                {carts.map((item, key) => 
+                    <CartItem key={key} data={item} />
+                )}
+            </div>
+            <div className='bg-[#E3E6F6] shadow-lg absolute bottom-0 left-0 right-0'>
+                <div className='p-3 text-[#4E4E4E] font-bold'>
+                    <h3>Total Amount: Rs {totalAmount.toFixed(2)}</h3>
+                </div>
+                <div className='p-3 font-semibold'>
+                    <input
+                        type="text"
+                        placeholder="Enter Service Number"
+                        value={serviceNumber}
+                        onChange={(e) => setServiceNumber(e.target.value)}
+                        className='w-full p-2 mb-2 rounded-md'
+                    />
+                </div>
+                <div className='grid grid-cols-2 gap-2 p-2'>
+                    <button className='bg-[#24256D] text-white font-bold px-5 py-3 text-lg rounded-md shadow-md'>Pay Here</button>
+                    <button className='bg-[#FFC10C] text-white font-bold px-5 py-3 text-lg rounded-md shadow-md' onClick={handleCheckout}>Check Out</button>
+                </div>
+            </div>
+{/* Kushan */}
+ 
+
+        </div>
+    );
+};
+
+export default CartTab;
+  /* const handleOpenApplication = () => {
         window.open('http://localhost:3000', '_blank');
     };
 
@@ -227,10 +295,4 @@ const CartTab = () => {
                 </button>
             </div>
             {showPopUp && <PopUp onClose={handleClosePopUp} />}
-            {showCheckPopUp && <CheckPopUp onClose={handleCloseCheckPopUp} />}
-        </div>
-    );
-};
-
-export default CartTab;
-
+            {showCheckPopUp && <CheckPopUp onClose={handleCloseCheckPopUp} />} */

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Navbar from "../components/AccountNavbar";
 
 function App() {
     const [orders, setOrders] = useState([]);
@@ -131,7 +132,9 @@ function App() {
 
     return (
         <div className="container mx-auto p-4">
+           
             <h1 className="text-2xl font-bold mb-4">Orders</h1>
+           
             <table className="min-w-full bg-white border border-gray-300 mb-4">
                 <thead>
                     <tr>

@@ -1692,7 +1692,7 @@ const CartTab = () => {
 
         try {
             handleConfirmOrder();
-            const response = await axios.post('http://localhost:5255/api/orders/checkout', purchaseData);
+            const response = await axios.post('http://localhost:5255/api/Orders/checkout', purchaseData);
             console.log('Order successfully placed:', response.data);
             setShowCheckPopUp(true);
         } catch (error) {

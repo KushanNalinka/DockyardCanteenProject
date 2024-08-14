@@ -38,6 +38,11 @@ import RecoverPassword from './components/RecoverPassword';
 import UserManagement from "./components/UserManagement";
 import Orders from './pages/Orders';
 import Account from './pages/Accountant'
+import PurchasedTable from './components/PurchasedTable';
+import RoleManagement from './components/RoleManagement';
+import AddRole from './components/AddRole';
+import AssignRoles from './components/AssignRoles';
+import AdminRegister from './components/AdminRegister';
 function App() {
   return (
     <BrowserRouter>
@@ -45,6 +50,7 @@ function App() {
       <Route path="/" element={<Login />} />
     
         <Route path="/register" element={<Register />} />
+        <Route path="/adminregister" element={<AdminRegister />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/cashier" element={<InitialScreen/>} />
         <Route path="/canteen" element={<CanteenInitialScreen/>} />
@@ -64,6 +70,10 @@ function App() {
         <Route path="/user-management" element={<UserManagement />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/accounts" element={<Account />} />
+        <Route path="/purchased" element={<PurchasedTable />} />
+        <Route path="/role" element={<RoleManagement />} />
+        <Route path="/addrole" element={<AddRole />} />
+        <Route path="/assignrole" element={<AssignRoles />} />
       </Routes>
     </BrowserRouter>
   );

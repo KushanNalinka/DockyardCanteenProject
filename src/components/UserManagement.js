@@ -76,6 +76,7 @@ const UserManagement = () => {
 
 export default UserManagement;*/
 import React, { useEffect, useState } from 'react';
+import Navbar from '../components/AdminNavbar';
 import axios from 'axios';
 import EditUserModal from './EditUserModal';
 
@@ -117,6 +118,9 @@ const UserManagement = () => {
     };
 
     return (
+        <>
+        <Navbar />
+        
         <div className="container mx-auto p-4">
             <h1 className="text-2xl font-bold mb-4">User Management</h1>
             <table className="min-w-full bg-white">
@@ -155,6 +159,7 @@ const UserManagement = () => {
                 <EditUserModal userId={selectedUserId} closeModal={closeModal} />
             )}
         </div>
+        </>
     );
 };
 

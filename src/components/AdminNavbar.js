@@ -8,16 +8,17 @@ const Navbar = () => {
     <nav className="bg-gray-800 p-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex space-x-4">
-          <a href="#" className="text-white px-3 py-2 rounded-md text-sm font-medium">
+          <a href="/admin-dashboard" className="text-white px-3 py-2 rounded-md text-sm font-medium">
             Dashboard
           </a>
           <DropdownMenu title="Users">
             <a href="/user-management" className="block px-4 py-2 text-sm text-gray-700">View Users</a>
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700">Add User</a>
+            <a href="/adminregister" className="block px-4 py-2 text-sm text-gray-700">Add User</a>
           </DropdownMenu>
           <DropdownMenu title="Roles">
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700">View Roles</a>
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700">Add Role</a>
+            <a href="/role" className="block px-4 py-2 text-sm text-gray-700">View Roles</a>
+            <a href="/addrole" className="block px-4 py-2 text-sm text-gray-700">Add Role</a>
+            <a href="/assignrole" className="block px-4 py-2 text-sm text-gray-700">Assign Role</a>
           </DropdownMenu>
           <DropdownMenu title="Reports">
             <a href="#" className="block px-4 py-2 text-sm text-gray-700">Monthly Report</a>

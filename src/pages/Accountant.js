@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
+import Navbar from "../components/AccountNavbar"
 
 const Dashboard = () => {
   // Sample data for the charts
@@ -30,6 +31,7 @@ const Dashboard = () => {
 
   return (
     <div className="p-6">
+      <Navbar/ >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="bg-white shadow-lg rounded-lg p-4">
           <h2 className="text-xl font-semibold mb-4">Summary</h2>

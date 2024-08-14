@@ -76,11 +76,13 @@ const Sidebar = ({ setSelectedCategory }) => {
   };
 
   return (
-    <div className="w-56 h-screen bg-white border-r border-gray-200 flex flex-col fixed">
+
+    <div className="w-56 h-screen bg-white border-r flex flex-col fixed">
       {/* Fixed CATEGORIES Header */}
-      <div className="h-16 flex items-center justify-center bg-blue-200 bg-opacity-50 p-4 rounded-t-lg shadow-lg cursor-pointer sticky top-0 z-10" onClick={() => setSelectedCategory('')}>
+      <div className="h-16 flex items-center justify-center bg-[#E3E6F6] p-4  shadow-sm cursor-pointer sticky top-0 z-10" onClick={() => setSelectedCategory('')}>
         <Link to="" className="no-underline">
-          <span className="text-xl font-bold text-[#28245F]">CATEGORIES</span>
+          <span className="text-xl font-black text-[#28245F]">CATEGORIES</span>
+
         </Link>
       </div>
 
@@ -99,7 +101,9 @@ const Sidebar = ({ setSelectedCategory }) => {
             <div className="flex items-center">
               <category.icon className="text-2xl mr-4" />
               <Link to="" className="no-underline">
-                <span className="text-xl font-bold  text-white">{category.name}</span>
+
+                <span className="text-xl font-semiboldbold  text-white">{category.name}</spa
+              
               </Link>
             </div>
           </div>
@@ -107,11 +111,14 @@ const Sidebar = ({ setSelectedCategory }) => {
       </div>
 
       {/* Fixed Menu Footer */}
-      <div className="h-16 flex items-center justify-center bg-blue-200 bg-opacity-50 p-4 rounded-b-lg shadow-lg cursor-pointer">
-        <Link to="/menu" className="no-underline">
+
+     
+        <Link to="/cashier" className="no-underline">
+        <div className="h-16 flex items-center justify-center bg-[#FFC10C] shadow-xl cursor-pointer">
           <span className="text-xl font-bold text-[#28245F]">Menu</span>
         </Link>
       </div>
+
     </div>
   );
 };

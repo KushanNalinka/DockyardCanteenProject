@@ -1,40 +1,19 @@
-
-
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './cartItem';
 import { clearCart } from '../stores/cart';
 
 import { products } from '../products';
-
-const CartTab = () => {
-    const carts = useSelector(store => store.cart.items);
-    const statusTab = useSelector(store => store.cart.statusTab);
-    const dispatch = useDispatch();
-    const [serviceNumber, setServiceNumber] = useState('');
-
-    // Calculate total amount
-    const totalAmount = carts.reduce((total, item) => {
-        const product = products.find(product => product.id === item.productId);
-        return total + (product.price * item.quantity);
-    }, 0);
-
-    const handleCheckout = () => {
-        const itemsWithNames = carts.map(item => {
-            const product = products.find(product => product.id === item.productId);
-            return {
-                ...item,
-                name: product ? product.name : 'Unknown',
-// Kushan
-/*import { products } from '../products'; // Import products
 import axios from 'axios'; // Import Axios for API calls
 import PopUp from './PopUp'; // Import the PopUp component
 import CheckPopUp from './checkPopUp';
 import { FaCaretDown } from 'react-icons/fa'; // Import down arrow icon
 
+
+
 const CartTab = () => {
-    const carts = useSelector((store) => store.cart.items);
-    const statusTab = useSelector((store) => store.cart.statusTab);
+    const carts = useSelector(store => store.cart.items);
+    const statusTab = useSelector(store => store.cart.statusTab);
     const dispatch = useDispatch();
     const [serviceNumber, setServiceNumber] = useState('');
     const [serviceUserName, setServiceUserName] = useState('');
@@ -43,13 +22,14 @@ const CartTab = () => {
     const [showCheckPopUp, setShowCheckPopUp] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown menu
 
+
     // Calculate total amount
     const totalAmount = carts.reduce((total, item) => {
-        const product = products.find((product) => product.id === item.productId);
-        return total + product.price * item.quantity;
+        const product = products.find(product => product.id === item.productId);
+        return total + (product.price * item.quantity);
     }, 0);
 
-    // Fetch service user name by service number
+     // Fetch service user name by service number
     const fetchServiceUserName = async (number) => {
         if (number) {
             try {
@@ -109,8 +89,7 @@ const CartTab = () => {
             return {
                 productId: item.productId,
                 name: product.name,
-                quantity: item.quantity,*/
-
+                quantity: item.quantity,
             };
         });
 
@@ -118,12 +97,7 @@ const CartTab = () => {
             items: itemsWithNames,
             totalAmount,
             serviceNumber,
-
-        };
-        console.log('Inserting data into the database:', purchaseData);
-
-// Kushan
- /*           serviceUserName,
+            serviceUserName,
         };
         console.log('Inserting data into the database:', purchaseData);
 
@@ -135,51 +109,12 @@ const CartTab = () => {
         } catch (error) {
             console.error('Error during purchase:', error.response.data || error.message);
         }
-*/
 
         dispatch(clearCart());
         setServiceNumber('');
     };
 
-
-    return (
-        <div className={`fixed top-0 right-0 bg-white shadow-2xl w-96 h-full flex flex-col transform transition-transform duration-500 ${statusTab ? '' : 'translate-x-full'}`}>
-            <div className='bg-[#E3E6F6] shadow-sm'>
-                <h2 className='p-5 text-[#28245F] font-black text-2xl text-center h-16'>SHOPPING CART</h2>
-            </div>
-            <div className='p-5 flex-grow overflow-y-auto' style={{ maxHeight: 'calc(100vh - 300px)' }}>
-                {/* Display all items */}
-                {carts.map((item, key) => 
-                    <CartItem key={key} data={item} />
-                )}
-            </div>
-            <div className='bg-[#E3E6F6] shadow-lg absolute bottom-0 left-0 right-0'>
-                <div className='p-3 text-[#4E4E4E] font-bold'>
-                    <h3>Total Amount: Rs {totalAmount.toFixed(2)}</h3>
-                </div>
-                <div className='p-3 font-semibold'>
-                    <input
-                        type="text"
-                        placeholder="Enter Service Number"
-                        value={serviceNumber}
-                        onChange={(e) => setServiceNumber(e.target.value)}
-                        className='w-full p-2 mb-2 rounded-md'
-                    />
-                </div>
-                <div className='grid grid-cols-2 gap-2 p-2'>
-                    <button className='bg-[#24256D] text-white font-bold px-5 py-3 text-lg rounded-md shadow-md'>Pay Here</button>
-                    <button className='bg-[#FFC10C] text-white font-bold px-5 py-3 text-lg rounded-md shadow-md' onClick={handleCheckout}>Check Out</button>
-                </div>
-            </div>
-{/* Kushan */}
- 
-
-        </div>
-    );
-};
-
-export default CartTab;
-  /* const handleOpenApplication = () => {
+    const handleOpenApplication = () => {
         window.open('http://localhost:3000', '_blank');
     };
 
@@ -212,87 +147,88 @@ export default CartTab;
 
     // Handle dropdown menu
     const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+   
+
+        
 
     return (
-        <div
-            className={`fixed top-0 right-0 bg-blue-200 bg-opacity-50 shadow-2xl w-96 h-full flex flex-col transform transition-transform duration-500 ${
-                statusTab ? '' : 'translate-x-full'
-            }`}
-        >
-            <div className="p-5 flex justify-between items-center">
-                <h2 className="text-[#28245F] font-semibold text-2xl text-center">SHOPPING CART</h2>
-                <div className="relative">
+        <div className={`fixed top-0 right-0 bg-white shadow-2xl w-96 h-full flex flex-col transform transition-transform duration-500 ${statusTab ? '' : 'translate-x-full'}`}>
+            
+            <div className='bg-[#E3E6F6] shadow-sm'>
+    <div className="p-5 h-16 flex items-center justify-between">
+        <h2 className='text-[#28245F] font-black text-2xl'>SHOPPING CART</h2>
+        <div className="relative">
+            <button
+                className="bg-[#FFC10C] text-white p-2 rounded-md flex items-center justify-center"
+                onClick={toggleDropdown}
+            >
+                <FaCaretDown className="text-2xl" />
+            </button>
+            {dropdownOpen && (
+                <div className="absolute right-0 mt-2 bg-[#E3E6F6] border border-gray-300 shadow-lg rounded-md w-40">
                     <button
-                        className="bg-[#FFC10C] text-white p-2 rounded-md flex items-center justify-center"
-                        onClick={toggleDropdown}
+                        className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 border-b border-gray-300"
+                        onClick={() => {
+                            dispatch(clearCart());
+                            setDropdownOpen(false);
+                        }}
                     >
-                        <FaCaretDown className="text-2xl" />
+                        Clear Cart
                     </button>
-                    {dropdownOpen && (
-                        <div className="absolute right-0 mt-2 bg-white border border-gray-300 shadow-lg rounded-md w-40">
-                            <button
-                                className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100"
-                                onClick={() => {
-                                    dispatch(clearCart());
-                                    setDropdownOpen(false);
-                                }}
-                            >
-                                Clear Cart
-                            </button>
-                            <button
-                                className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100"
-                                onClick={handleOpenApplication}
-                            >
-                                On Hold
-                            </button>
-                            <button
-                                className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100"
-                            >
-                                Settings
-                            </button>
-                        </div>
-                    )}
+                    <button
+                        className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100 border-b border-gray-300"
+                        onClick={handleOpenApplication}
+                    >
+                        On Hold
+                    </button>
+                    <button
+                        className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100"
+                    >
+                        Log Out
+                    </button>
+                </div>
+            )}
+        </div>
+    </div>
+</div>
+
+            <div className='p-5 flex-grow overflow-y-auto' style={{ maxHeight: 'calc(100vh - 300px)' }}>
+                {/* Display all items */}
+                {carts.map((item, key) => 
+                    <CartItem key={key} data={item} />
+                )}
+            </div>
+            <div className='bg-[#E3E6F6] shadow-lg absolute bottom-0 left-0 right-0'>
+                <div className='p-3 text-[#4E4E4E] font-bold'>
+                    <h3>Total Amount: Rs {totalAmount.toFixed(2)}</h3>
+                    <h4>Service User: {serviceUserName || 'N/A'}</h4>
+                    {serviceError && <p className="text-red-500">{serviceError}</p>}
+                </div>
+                <div className='p-3 font-semibold'>
+                    <input
+                        type="text"
+                        placeholder="Enter Service Number"
+                        value={serviceNumber}
+                        onChange={(e) => setServiceNumber(e.target.value)}
+                        
+                        onKeyDown={(e) => e.key === 'Enter' && handleConfirmServiceNumber()}
+                        
+                        className='w-full p-2 mb-2 rounded-md'
+                    />
+                </div>
+                <div className='grid grid-cols-2 gap-2 p-2'>
+                    <button className='bg-[#24256D] text-white font-bold px-5 py-3 text-lg rounded-md shadow-md'  onClick={handleBuyNow}
+                    disabled={!serviceNumber || !serviceUserName}>Pay Here</button>
+                    <button className='bg-[#FFC10C] text-white font-bold px-5 py-3 text-lg rounded-md shadow-md' onClick={handleCheckout}   disabled={!serviceNumber || !serviceUserName}>Check Out</button>
                 </div>
             </div>
+{/* Kushan */}
+{showPopUp && <PopUp onClose={handleClosePopUp} />}
+{showCheckPopUp && <CheckPopUp onClose={handleCloseCheckPopUp} />}
 
-            <div className="p-5 flex-grow overflow-y-auto">
-                {carts.map((item, key) => (
-                    <CartItem key={key} data={item} />
-                ))}
-            </div>
+        </div>
+    );
+};
 
-            <div className="p-5 text-white">
-                <h3>Total Amount: ${totalAmount.toFixed(2)}</h3>
-                <h4>Service User: {serviceUserName || 'N/A'}</h4>
-                {serviceError && <p className="text-red-500">{serviceError}</p>}
-            </div>
-
-            <div className="p-5">
-                <input
-                    type="text"
-                    placeholder="Enter Service Number"
-                    value={serviceNumber}
-                    onChange={(e) => setServiceNumber(e.target.value)}
-                    className="w-full p-2 mb-2 rounded-md"
-                    onKeyDown={(e) => e.key === 'Enter' && handleConfirmServiceNumber()}
-                />
-            </div>
-
-            <div className="grid grid-cols-2">
-                <button
-                    className="bg-[#28245F] text-white px-5 py-3 text-lg"
-                    onClick={handleBuyNow}
-                    disabled={!serviceNumber || !serviceUserName}
-                >
-                    BUY NOW
-                </button>
-                <button
-                    className="bg-[#FFC10C] text-white px-5 py-3 text-lg"
-                    onClick={handleCheckout}
-                    disabled={!serviceNumber || !serviceUserName}
-                >
-                    CHECKOUT
-                </button>
-            </div>
-            {showPopUp && <PopUp onClose={handleClosePopUp} />}
-            {showCheckPopUp && <CheckPopUp onClose={handleCloseCheckPopUp} />} */
+export default CartTab;
+  

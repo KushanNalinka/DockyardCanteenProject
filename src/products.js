@@ -379,6 +379,7 @@ const fetchFoods = async () => {
             meal: food.meal,
             slug: food.slug,
             quantityChangedAt: food.quantityChangedAt,
+            submitClickedAt:food.submitClickedAt,
             image: food.imageSrc // Map image based on id
         }));
     } catch (error) {

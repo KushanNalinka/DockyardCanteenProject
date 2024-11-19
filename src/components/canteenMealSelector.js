@@ -35,10 +35,7 @@ const MealSelector = () => {
           <h2 className="text-xl font-semibold mt-2">Dinner</h2>
         </div>
       </div>
-      <div className="flex justify-between w-full mt-10 px-4">
-        <button className="bg-yellow-300 py-2 px-4 rounded-lg">Back</button>
-        <button className="bg-blue-900 text-white py-2 px-4 rounded-lg">Next</button>
-      </div>
+      
     </div>
   );
 };

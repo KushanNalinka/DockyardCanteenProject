@@ -11,7 +11,16 @@ const Navbar = () => {
           <img src={logo} alt="Logo" className="w-12 h-12 mr-1" />
           <span className="text-2xl font-bold text-white">DOCCAFÉ</span>
         </div>
-        <div className="space-x-4 font-semibold text-white">
+       
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+/* <div className="space-x-4 font-semibold text-white">
 
           <Link to="/" className="text-lg">Home</Link>
           <Link to="/menu" className="text-lg">Menu</Link>
@@ -24,9 +33,4 @@ const Navbar = () => {
      
           <div className="ml-2 text-lg">Jhon</div>
         </div>
-      </div>
-    </nav>
-  );
-};
-
-export default Navbar;
+        */

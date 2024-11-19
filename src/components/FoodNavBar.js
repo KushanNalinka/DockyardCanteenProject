@@ -1,13 +1,13 @@
 // Navbar.js
 import React from 'react';
 import { FaHome, FaList, FaUser, FaCog } from 'react-icons/fa';
-
+import logo from '../assets/images/doccanteen.png.png';
 const Navbar = () => {
     return (
-        <nav className="bg-gray-800 text-white p-4">
+        <nav className="bg-[#FFC10C] text-white p-3 fixed top-0 w-full z-10">
             <div className="container mx-auto flex items-center justify-between">
                 <div className="flex items-center space-x-4">
-                    <img src="/path/to/company-logo.png" alt="Company Logo" className="w-12 h-12 rounded-full" />
+                    <img src={logo} alt="Logo" className="w-14 h-14 rounded-full" />
                     <div className="text-2xl font-bold">Food Manager</div>
                 </div>
                 <div className="flex space-x-4">

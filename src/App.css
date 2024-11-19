@@ -1,0 +1,35 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.bg-zinc-200 {
+  background-color: #e2e8f0;
+}
+
+.flex {
+  display: flex;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.transition-transform {
+  transition: transform 0.5s;
+}
+
+.transform {
+  transform: translateX(0);
+}
+
+.transform.-translate-x-56 {
+  transform: translateX(-14rem); /* Adjust this value based on your sidebar width */
+}
